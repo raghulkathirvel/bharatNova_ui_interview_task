@@ -17,4 +17,4 @@ The focus of this project is on:
 
 ## Screenshots
 
-home Screen => ![homeScreen_screen_short.png](homeScreen_screen_short.png)
+![homeScreen_screen_short1.jpeg](homeScreen_screen_short1.jpeg)
