@@ -1,16 +1,20 @@
-# social_media_ui
+## BharatNova – Flutter UI & API Integration Task
 
-A new Flutter project.
+A Flutter application built as part of an assignment to demonstrate UI precision, device feature integration, a
+nd scalable API-driven architecture.
+ 
+## Overview
 
-## Getting Started
+This application replicates the provided Figma design with high visual accuracy and integrates real-time device 
+features along with dynamic API-based content rendering.
 
-This project is a starting point for a Flutter application.
+The focus of this project is on:
 
-A few resources to get you started if this is your first Flutter project:
+1. Pixel-perfect UI implementation
+2. Clean architecture
+3. Smooth user experience
+4. Scalable and maintainable code
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Screenshots
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+home Screen => ![img.png](img.png)
