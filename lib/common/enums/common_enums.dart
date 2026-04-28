@@ -1,0 +1,1 @@
+enum bottomNav{home,search,subscription,newPost,shorts,notification,profile}
