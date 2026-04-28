@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
 
-    Get.find<FeedController>().getProductList();
+    Get.find<FeedController>().getProductList(false);
   }
   @override
   Widget build(BuildContext context) {
@@ -80,10 +80,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       if (locationText == null || locationText.isEmpty) {
                         return  SizedBox();
-                        //   Text("No Location Found",style: interRegular.copyWith(
-                        //   color: Colors.black87,
-                        //   fontSize: 10,
-                        // ),);
                       }
 
                       final words = locationText.trim().split(" ");

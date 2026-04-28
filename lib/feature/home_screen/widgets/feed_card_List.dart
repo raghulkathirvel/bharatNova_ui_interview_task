@@ -21,7 +21,7 @@ class _FeedCardListState extends State<FeedCardList> {
     super.initState();
 
     final controller = Get.find<FeedController>();
-    controller.getProductList();
+    controller.getProductList(false);
 
     _scrollController.addListener(() {
       if (_scrollController.position.pixels >=
@@ -56,26 +56,32 @@ class _FeedCardListState extends State<FeedCardList> {
           return const Center(child: Text("No Post at this time!"));
         }
 
-        return ListView.builder(
-          controller: _scrollController,
-          itemCount: posts.length + (feedController.isLoadingMore ? 1 : 0),
-          itemBuilder: (context, index) {
-
-            if (index == posts.length) {
-              return const Padding(
-                padding: EdgeInsets.all(12),
-                child: Center(child: CircularProgressIndicator()),
-              );
-            }
-
-            final postData = posts[index];
-            bool repostNeed = index % 3 == 0;
-
-            return FeedCard(
-              post: postData,
-              repostHeader: repostNeed,
-            );
+        return RefreshIndicator(
+          color: Colors.white54,
+          onRefresh: (){
+            return feedController.getProductList(true);
           },
+          child: ListView.builder(
+            controller: _scrollController,
+            itemCount: posts.length + (feedController.isLoadingMore ? 1 : 0),
+            itemBuilder: (context, index) {
+
+              if (index == posts.length) {
+                return const Padding(
+                  padding: EdgeInsets.all(12),
+                  child: Center(child: CircularProgressIndicator()),
+                );
+              }
+
+              final postData = posts[index];
+              bool repostNeed = index % 3 == 0;
+
+              return FeedCard(
+                post: postData,
+                repostHeader: repostNeed,
+              );
+            },
+          ),
         );
       },
     );

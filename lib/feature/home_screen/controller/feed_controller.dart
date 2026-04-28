@@ -22,9 +22,10 @@ class FeedController extends GetxController implements GetxService {
   int skip = 0;
   int total = 0;
 
-  Future<void> getProductList() async {
+  Future<void> getProductList(bool isReload) async {
 
-    if (_posts.isNotEmpty) return;
+    if(isReload) {_posts.clear();}
+    if (_posts.isNotEmpty ) return;
     _isLoading = true;
     update();
 
